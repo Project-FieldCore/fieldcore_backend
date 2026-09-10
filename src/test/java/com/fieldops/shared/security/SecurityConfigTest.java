@@ -28,4 +28,9 @@ class SecurityConfigTest {
   void healthIsPublic() throws Exception {
     mockMvc.perform(get("/actuator/health")).andExpect(status().isOk());
   }
+
+  @Test
+  void swaggerUiIsPublic() throws Exception {
+    mockMvc.perform(get("/swagger-ui/index.html")).andExpect(status().isOk());
+  }
 }
